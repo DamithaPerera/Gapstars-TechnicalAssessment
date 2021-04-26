@@ -44,7 +44,7 @@ const randomFirstCatRepo = async (queryData) => {
  */
 const randomSecondCatRepo = async (queryData) => {
 
-    const who = queryData.whoSecondImage
+    const who = queryData.greetingSecondImage
     const width = queryData.widthSecondImage
     const height = queryData.heightSecondImage
     const color = queryData.colorSecondImage

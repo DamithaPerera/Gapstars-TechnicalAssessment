@@ -24,7 +24,7 @@ const randomCatPost = async (req, res, next) => {
     try {
         const queryData = req.body
         const data = await service.randomCatService(queryData);
-        const success_msg = lang.REGISTRATION_SUCCESS
+        const success_msg = lang.THE_FILE_DOWNLOADED
         res.render('dashboard', {name: req.user.name, img1: data.firstData, img2: data.secondData, success_msg})
     } catch (e) {
         errors.push({msg: e})
