@@ -10,9 +10,24 @@ const blend = require('@mapbox/blend');
  * @returns {Promise<{secondData: string, firstData: string}>}
  */
 const randomCatService = async (queryData) => {
+    
+    const requestData = {
+         greeting : queryData.greetingsFirstImage,
+         width : queryData.widthFirstImage,
+         height : queryData.heightFirstImage,
+         color : queryData.colorFirstImage,
+         size : queryData.sizeFirstImage
+    }
+    const requestSecondData = {
+        greeting : queryData.greetingSecondImage,
+        width : queryData.widthSecondImage,
+        height : queryData.heightSecondImage,
+        color : queryData.colorSecondImage,
+        size : queryData.sizeSecondImage
+    }
 
-    const firstData = await repo.randomFirstCatRepo(queryData)
-    const secondData = await repo.randomSecondCatRepo(queryData)
+    const firstData = await repo.randomCatRepo(requestData)
+    const secondData = await repo.randomCatRepo(requestSecondData)
 
     blend([{
         buffer: new Buffer(firstData.data, 'binary'),
